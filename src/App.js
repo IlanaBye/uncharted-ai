@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import ChatGPT from './ChatGPT.png';
+import UnchartedAi from './UnchartedAi.png';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <img src={UnchartedAi} alt="Uncharted AI Logo" className="app-logo" />
+      <form>
+        <img src={ChatGPT} alt="ChatGPT Logo" className="chatgpt-logo" />
+        <input type="text" value="" placeholder="Ask anything..." />
+        <button type="submit">Generate</button>
+      </form>
+      <p className="response-area">The response from AI will display here...</p>
+      <div className="footer">
+        ©2023 Uncharted AI LLC | All Rights Reserved.
+      </div>
     </div>
   );
 }
