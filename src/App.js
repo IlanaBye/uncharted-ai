@@ -17,7 +17,7 @@ function App() {
 
     //communicate with API
     axios
-      .post('http://localhost:3000/recommendation', { prompt })
+      .post('http://localhost:8080/recommendation', { prompt })
       .then((res) => {
         setResponse(res.data);
         setLoading(false);
@@ -46,7 +46,7 @@ function App() {
       </form>
       <p className="response-area">
         {loading ? 'loading...' : response}
-        The response from AI will display here...
+        {/* The response from AI will display here... */}
       </p>
       <div className="footer">
         ©2023 Uncharted AI LLC | All Rights Reserved.
