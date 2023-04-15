@@ -5,32 +5,34 @@ import ChatGPT from './ChatGPT.png';
 import UnchartedAi from './UnchartedAi.png';
 
 import './App.css';
+import Form from './components/form';
 
 function App() {
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
 
-    //communicate with API
-    axios
-      .post('http://localhost:8080/recommendation', { prompt })
-      .then((res) => {
-        setResponse(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+  //   //communicate with API
+  //   axios
+  //     .post('http://localhost:8080/recommendation', { prompt })
+  //     .then((res) => {
+  //       setResponse(res.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // };
 
   return (
     <div className="wrapper">
       <img src={UnchartedAi} alt="Uncharted AI Logo" className="app-logo" />
-      <form onSubmit={handleSubmit}>
+      <Form prompt={prompt} />
+      {/* <form onSubmit={handleSubmit}>
         <img
           src={ChatGPT}
           alt="ChatGPT Logo"
@@ -43,7 +45,7 @@ function App() {
           placeholder="Ask anything..."
         />
         <button type="submit">Generate</button>
-      </form>
+      </form> */}
       <p className="response-area">
         {loading ? 'loading...' : response}
         {/* The response from AI will display here... */}
