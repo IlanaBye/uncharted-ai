@@ -1,51 +1,46 @@
 import { useState } from 'react';
 import axios from 'axios';
-
-import ChatGPT from './ChatGPT.png';
+import RecForm from './components/RecForm';
+// import ChatGPT from './ChatGPT.png';
 import UnchartedAi from './UnchartedAi.png';
 
 import './App.css';
-import Form from './components/form';
 
 function App() {
   const [prompt, setPrompt] = useState('');
+  //const [form, setForm] = useState({
+  //letterTo: "",
+  //schoolCollege: false,
+  //company: false,
+  //personName: "",
+  //yourName: "",
+  //relationship: "",
+  //importantInfo: "",
+  //})
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    debugger;
+    setLoading(true);
 
-  //   //communicate with API
-  //   axios
-  //     .post('http://localhost:8080/recommendation', { prompt })
-  //     .then((res) => {
-  //       setResponse(res.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // };
+    //communicate with API
+    axios
+      .post('http://localhost:8080/recommendation', { prompt })
+      .then((res) => {
+        setResponse(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   return (
     <div className="wrapper">
       <img src={UnchartedAi} alt="Uncharted AI Logo" className="app-logo" />
-      <Form prompt={prompt} />
-      {/* <form onSubmit={handleSubmit}>
-        <img
-          src={ChatGPT}
-          alt="ChatGPT Logo"
-          className="{loading ? 'chatgpt-logo loading' : 'chatgpt-logo"
-        />
-        <input
-          type="text"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Ask anything..."
-        />
-        <button type="submit">Generate</button>
-      </form> */}
+      <RecForm onRecForm={handleSubmit} setPrompt={setPrompt} />
       <p className="response-area">
         {loading ? 'loading...' : response}
         {/* The response from AI will display here... */}
