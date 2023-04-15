@@ -2,12 +2,12 @@
 
 import ChatGPT from '../ChatGPT.png';
 
-function RecForm(props) {
-  console.log('PROPS in RecForm', props);
+function RecForm({ promptData, setPromptData, onRecForm }) {
+  console.log('PROMPDATA', promptData);
 
   return (
     <div>
-      <form onSubmit={props.onRecForm}>
+      <form onSubmit={onRecForm}>
         <img
           src={ChatGPT}
           alt="ChatGPT Logo"
@@ -15,8 +15,10 @@ function RecForm(props) {
         />
         <input
           type="text"
-          value={props.prompt}
-          onChange={(e) => props.setPrompt(e.target.value)}
+          value={promptData.letterTo}
+          onChange={(e) =>
+            setPromptData({ ...promptData, letterTo: e.target.value })
+          }
           placeholder="Ask anything..."
         />
         <button type="submit">Generate</button>
