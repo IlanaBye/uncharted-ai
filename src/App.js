@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import RecForm from './components/RecForm';
-// import ChatGPT from './ChatGPT.png';
+import MakePrompt from './components/MakePrompt';
+
 import UnchartedAi from './UnchartedAi.png';
 
 import './App.css';

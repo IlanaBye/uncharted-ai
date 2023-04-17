@@ -20,7 +20,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
                 name="letterTo"
                 value={promptData.letterTo || ''}
                 onChange={handleChange}
-                placeholder="School/College/University/Company"
+                placeholder="Institution Name"
               />
             </label>
             <label>
