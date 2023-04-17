@@ -36,13 +36,18 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               <input
                 type="radio"
                 name="institution"
-                defaultChecked={true}
-                value="option1"
+                onChange={handleChange}
+                value="School/College/University"
               />
               School/College/University
             </label>
             <label>
-              <input type="radio" name="institution" value="option2" />
+              <input
+                type="radio"
+                name="institution"
+                onChange={handleChange}
+                value="Company"
+              />
               Company
             </label>
             <label className="input-field">
@@ -69,44 +74,71 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               <input
                 type="radio"
                 name="relationship"
-                defaultChecked={true}
-                value="option1"
+                value="Teacher"
+                onChange={handleChange}
               />
               Teacher
             </label>
             <label>
-              <input type="radio" name="relationship" value="option2" />
+              <input
+                type="radio"
+                name="relationship"
+                onChange={handleChange}
+                value="Mentor"
+              />
               Mentor
             </label>
             <label>
-              <input type="radio" name="relationship" value="option3" />
+              <input
+                type="radio"
+                name="relationship"
+                onChange={handleChange}
+                value="School leader"
+              />
               School leader
             </label>
             <label>
-              <input type="radio" name="relationship" value="option4" />
+              <input
+                type="radio"
+                name="relationship"
+                onChange={handleChange}
+                value="Family friend"
+              />
               Family friend
             </label>
             <label>
-              <input type="radio" name="relationship" value="option5" />
+              <input
+                type="radio"
+                name="relationship"
+                onChange={handleChange}
+                value="Counselor/Advisor"
+              />
               Counselor/Advisor
             </label>
             <label>
-              <input type="radio" name="relationship" value="option6" />
+              <input
+                type="radio"
+                name="relationship"
+                onChange={handleChange}
+                value="Other"
+              />
               Other
             </label>
-            <label className="input-area">
+            <label className="input-textarea">
               Important information to include:
-              <input
+              <textarea
                 type="text"
                 name="importantInfo"
+                rows={4}
+                cols={75}
                 value={promptData.importantInfo}
                 onChange={handleChange}
                 // placeholder="Full Name"
               />
             </label>
           </div>
+          <button type="submit">Generate</button>
         </div>
-        <button type="submit">Generate</button>
       </form>
     </div>
   );
