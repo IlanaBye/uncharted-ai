@@ -5,6 +5,12 @@ import ChatGPT from '../ChatGPT.png';
 function RecForm({ promptData, setPromptData, onRecForm }) {
   console.log('PROMPDATA', promptData);
 
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPromptData((promptData) => ({ ...promptData, [name]: value }));
+  };
+
   return (
     <div>
       <h1 className="page-header">Letter of Recommendation Generator</h1>
@@ -20,10 +26,9 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               This letter is to:
               <input
                 type="text"
-                value={promptData.letterTo}
-                onChange={(e) =>
-                  setPromptData({ ...promptData, letterTo: e.target.value })
-                }
+                name="letterTo"
+                value={promptData.letterTo || ''}
+                onChange={handleChange}
                 placeholder="School/College/University/Company"
               />
             </label>
@@ -44,10 +49,9 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               Person's name:
               <input
                 type="text"
+                name="personName"
                 value={promptData.personName}
-                onChange={(e) =>
-                  setPromptData({ ...promptData, letterTo: e.target.value })
-                }
+                onChange={handleChange}
                 placeholder="Full Name"
               />
             </label>
@@ -55,10 +59,9 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               Your name:
               <input
                 type="text"
+                name="yourName"
                 value={promptData.yourName}
-                onChange={(e) =>
-                  setPromptData({ ...promptData, letterTo: e.target.value })
-                }
+                onChange={handleChange}
                 placeholder="Full Name"
               />
             </label>
@@ -95,10 +98,9 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               Important information to include:
               <input
                 type="text"
+                name="importantInfo"
                 value={promptData.importantInfo}
-                onChange={(e) =>
-                  setPromptData({ ...promptData, letterTo: e.target.value })
-                }
+                onChange={handleChange}
                 // placeholder="Full Name"
               />
             </label>
