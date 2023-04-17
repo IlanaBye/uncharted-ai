@@ -16,7 +16,7 @@ body {
 .app-logo {
   display: block;
   margin: 10px auto 20px auto;
-  /* background-color: #414042; */
+  background-color: #414042;
   max-width: 400px;
 }
 
@@ -61,6 +61,22 @@ body {
 
 .chatgpt-logo.loading {
   animation: rotation 2s infinite linear;
+}
+
+.page-header {
+  font-size: 30px;
+}
+
+.recommendation-form {
+  font-size: 20px;
+  max-width: 500px;
+  min-height: 500px;
+  padding: 10px 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 @keyframes App-logo-spin {
