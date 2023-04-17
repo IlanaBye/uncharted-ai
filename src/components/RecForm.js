@@ -1,7 +1,3 @@
-// import { useState } from 'react';
-
-import ChatGPT from '../ChatGPT.png';
-
 function RecForm({ promptData, setPromptData, onRecForm }) {
   console.log('PROMPDATA', promptData);
 
@@ -15,11 +11,6 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
     <div>
       <h1 className="page-header">Letter of Recommendation Generator</h1>
       <form onSubmit={onRecForm}>
-        {/* <img
-          src={ChatGPT}
-          alt="ChatGPT Logo"
-          className="{loading ? 'chatgpt-logo loading' : 'chatgpt-logo"
-        /> */}
         <div className="whole-page">
           <div className="recommendation-form">
             <label className="input-field">
