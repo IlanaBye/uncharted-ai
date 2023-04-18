@@ -1,9 +1,9 @@
 function MakePrompt(promptData) {
-  const institution = promptData.institution ?? 'INSTITUTION';
-  const personName = promptData.personName ?? 'PERSON NAME';
-  const yourName = promptData.yourName ?? 'YOUR NAME';
-  const relationship = promptData.relationship ?? 'RELATIONSHIP';
-  const importantInfo = promptData.importantInfo ?? 'IMPORTANT INFO';
+  const institution = promptData?.institution || 'INSTITUTION';
+  const personName = promptData?.personName || 'PERSON NAME';
+  const yourName = promptData?.yourName || 'YOUR NAME';
+  const relationship = promptData?.relationship || 'RELATIONSHIP';
+  const importantInfo = promptData?.importantInfo || 'IMPORTANT INFO';
   console.log(promptData);
 
   return `Act as seasoned ${relationship} who is named ${yourName} writing a

@@ -9,7 +9,6 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
 
   return (
     <div>
-      <h1 className="page-header">Letter of Recommendation Generator</h1>
       <form onSubmit={onRecForm}>
         <div className="whole-page">
           <div className="recommendation-form">
@@ -61,7 +60,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
                 placeholder="Full Name"
               />
             </label>
-            <label>
+            <label className="input-radio">
               <input
                 type="radio"
                 name="relationship"
@@ -70,7 +69,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               />
               Teacher
             </label>
-            <label>
+            <label className="input-radio">
               <input
                 type="radio"
                 name="relationship"
@@ -79,7 +78,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               />
               Mentor
             </label>
-            <label>
+            <label className="input-radio">
               <input
                 type="radio"
                 name="relationship"
@@ -88,7 +87,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               />
               School leader
             </label>
-            <label>
+            <label className="input-radio">
               <input
                 type="radio"
                 name="relationship"
@@ -97,7 +96,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               />
               Family friend
             </label>
-            <label>
+            <label className="input-radio">
               <input
                 type="radio"
                 name="relationship"
@@ -106,7 +105,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               />
               Counselor/Advisor
             </label>
-            <label>
+            <label className="input-radio">
               <input
                 type="radio"
                 name="relationship"
@@ -120,11 +119,9 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               <textarea
                 type="text"
                 name="importantInfo"
-                rows={4}
-                cols={75}
                 value={promptData.importantInfo}
                 onChange={handleChange}
-                // placeholder="Full Name"
+                // style={{ width: '100%' }}
               />
             </label>
           </div>

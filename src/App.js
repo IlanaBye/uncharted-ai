@@ -40,15 +40,21 @@ function App() {
   return (
     <div className="wrapper">
       <img src={UnchartedAi} alt="Uncharted AI Logo" className="app-logo" />
-      <RecForm
-        onRecForm={handleSubmit}
-        setPromptData={setPromptData}
-        promptData={promptData}
-      />
-      <p className="response-area">
-        {loading ? 'loading...' : response}
-        {/* The response from AI will display here... */}
-      </p>
+      <h1 className="page-header">Letter of Recommendation Generator</h1>
+
+      <div style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}>
+        <RecForm
+          onRecForm={handleSubmit}
+          setPromptData={setPromptData}
+          promptData={promptData}
+        />
+        <div>
+          <p className="response-area">
+            {loading ? 'loading...' : response}
+            {/* The response from AI will display here... */}
+          </p>
+        </div>
+      </div>
       <div className="footer">
         ©2023 Uncharted AI LLC | All Rights Reserved.
       </div>
