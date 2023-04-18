@@ -6,6 +6,7 @@ import MakePrompt from './components/MakePrompt';
 import UnchartedAi from './UnchartedAi.png';
 
 import './App.css';
+import SideBar from './components/Sidebar';
 
 function App() {
   const [promptData, setPromptData] = useState({
@@ -39,10 +40,13 @@ function App() {
 
   return (
     <div className="wrapper">
-      <img src={UnchartedAi} alt="Uncharted AI Logo" className="app-logo" />
+      <SideBar />
+      <div className="app-logo">
+        <img src={UnchartedAi} alt="Uncharted AI Logo" />
+      </div>
       <h1 className="page-header">Letter of Recommendation Generator</h1>
 
-      <div style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}>
+      <div id="form-input-output">
         <RecForm
           onRecForm={handleSubmit}
           setPromptData={setPromptData}
