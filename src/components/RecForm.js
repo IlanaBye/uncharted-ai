@@ -1,9 +1,5 @@
-// import { useState } from 'react';
-
-import ChatGPT from '../ChatGPT.png';
-
 function RecForm({ promptData, setPromptData, onRecForm }) {
-  console.log('PROMPDATA', promptData);
+  // console.log('PROMPDATA', promptData);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -15,24 +11,19 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
     <div>
       <h1 className="page-header">Letter of Recommendation Generator</h1>
       <form onSubmit={onRecForm}>
-        {/* <img
-          src={ChatGPT}
-          alt="ChatGPT Logo"
-          className="{loading ? 'chatgpt-logo loading' : 'chatgpt-logo"
-        /> */}
         <div className="whole-page">
           <div className="recommendation-form">
             <label className="input-field">
               This letter is to:
               <input
                 type="text"
-                name="letterTo"
-                value={promptData.letterTo || ''}
+                name="institution"
+                value={promptData.institution || ''}
                 onChange={handleChange}
-                placeholder="School/College/University/Company"
+                placeholder="Institution Name"
               />
             </label>
-            <label>
+            {/* <label>
               <input
                 type="radio"
                 name="institution"
@@ -49,7 +40,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
                 value="Company"
               />
               Company
-            </label>
+            </label> */}
             <label className="input-field">
               Person's name:
               <input
