@@ -1,5 +1,5 @@
 function RecForm({ promptData, setPromptData, onRecForm }) {
-  console.log('PROMPDATA', promptData);
+  // console.log('PROMPDATA', promptData);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -17,13 +17,13 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
               This letter is to:
               <input
                 type="text"
-                name="letterTo"
-                value={promptData.letterTo || ''}
+                name="institution"
+                value={promptData.institution || ''}
                 onChange={handleChange}
                 placeholder="Institution Name"
               />
             </label>
-            <label>
+            {/* <label>
               <input
                 type="radio"
                 name="institution"
@@ -40,7 +40,7 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
                 value="Company"
               />
               Company
-            </label>
+            </label> */}
             <label className="input-field">
               Person's name:
               <input
