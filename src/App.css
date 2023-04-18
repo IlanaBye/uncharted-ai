@@ -23,8 +23,9 @@ body {
 #form-input-output {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
+  max-width: 100%;
 }
 
 .wrapper form {
@@ -76,14 +77,12 @@ body {
 .response-area {
   font-size: 20px;
   padding: 10px;
-
-  margin: 10px 30px 10px 10px;
+  margin: 10px 10px 10px 10px;
   border: 1px solid #414042;
   border-radius: 4px;
   background-color: #ffffff;
-  min-width: 400px;
+  width: 500px;
   min-height: 500px;
-  max-width: 60%;
 }
 
 .footer {
@@ -105,7 +104,7 @@ body {
   min-width: 400px;
   min-height: 400px;
   padding: 10px 10px;
-  margin: 10px;
+  margin: 10px 10px 10px 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
