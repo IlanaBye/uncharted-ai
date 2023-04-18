@@ -121,7 +121,6 @@ function RecForm({ promptData, setPromptData, onRecForm }) {
                 name="importantInfo"
                 value={promptData.importantInfo}
                 onChange={handleChange}
-                // style={{ width: '100%' }}
               />
             </label>
           </div>
