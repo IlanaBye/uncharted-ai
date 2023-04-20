@@ -25,7 +25,7 @@ function App() {
     setLoading(true);
 
     const prompt = MakePrompt(promptData);
-    console.log('PROMPT', prompt);
+
     //communicate with API
     axios
       .post('http://localhost:8080/recommendation', { prompt })
@@ -53,10 +53,7 @@ function App() {
           promptData={promptData}
         />
         <div>
-          <p className="response-area">
-            {loading ? 'loading...' : response}
-            {/* The response from AI will display here... */}
-          </p>
+          <p className="response-area">{loading ? 'loading...' : response}</p>
         </div>
       </div>
       <div className="footer">

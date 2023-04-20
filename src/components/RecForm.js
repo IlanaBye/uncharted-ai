@@ -1,6 +1,4 @@
 function RecForm({ promptData, setPromptData, onRecForm }) {
-  // console.log('PROMPDATA', promptData);
-
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
